@@ -16,10 +16,8 @@ function ans(){
     var data = document.getElementById("input1").innerText
     document.getElementById("para").innerText = ""
     document.getElementById("para").append(eval(data))
-    
+    //yeayyy
 }
-
-
 
 
 function sub(){
