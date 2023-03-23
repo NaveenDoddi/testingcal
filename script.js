@@ -233,8 +233,45 @@ function quicksort(arr){
 }
 var array = [10, 5, 2, 3, 7, 6, 8, 9, 1, 4];
 var arrrr = [29382,28820,280802]
-console.log(typeof([...array,...arrrr]))
-console.log(quicksort(array))
+// console.log(typeof([...array,...arrrr]))
+// console.log(quicksort(array))
 
+var str = "cat"
+var arr = str.split("")
+var arr1 = [];
+var temp;
+for(let i=0 ; i< arr.length; i++){
+  var temp= arr[i]
+  arr1[i] = [];
+  
+  for(let j=0; j<arr.length; j++){
+    
+    arr1[i][j]=arr[j];
+    // arr1[i][]=temp;
+  }
+  
+  
+  
+  
+}
+// console.log(arr1)
 
+let permArr = [];
+let usedChars = [];
 
+function permute(input) {
+
+  const chars = input.split("");
+  for (let i = 0; i < chars.length; i++) {
+      const ch = chars.splice(i, 1);
+      usedChars.push(ch);
+      if (chars.length === 0) {
+        permArr[permArr.length] = usedChars.join("");
+      }
+      permute(chars.join(""));
+      chars.splice(i, 0, ch);
+      usedChars.pop();
+  }
+  return permArr
+};
+console.log(permute("hi"))
