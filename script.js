@@ -55,8 +55,33 @@
 
 
 
-
+var value;
 function run(){
+
+var namee = document.getElementById("f").innerText
+persons[0].name = namee
+persons = JSON.stringify(persons)
+fetch("https://reqres.in/api/users", {
+  method: "POST",
+  body: persons,
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+  .then((response) => response.json())
+  
+  .then(function rrr(data){
+    console.log(data)
+    value = data
+    alert("fuck")
+  }); 
+var value1
+  // 
+  setTimeout(rrr, 1000);
+  
+  // fetch('https://reqres.in/api/users')      //api for the get request
+  // .then(response => response.json())
+  // .then(data => console.log(data));
 //     var name = document.getElementById("name").value
 //     var passcode = document.getElementById("passcode").value
 //     var para = document.createElement("p")
@@ -182,7 +207,7 @@ const empdata1to20 = [
 //     "+7":"run",
 //   },
 // ]
-const persons=[
+let persons=[
   {
     three:3,
     one:1,
@@ -265,7 +290,7 @@ function permute(input) {
   for (let i = 0; i < chars.length; i++) {
       const ch = chars.splice(i, 1);
       usedChars.push(ch);
-      if (chars.length === 0) {
+      if (chars.length == 0) {
         permArr[permArr.length] = usedChars.join("");
       }
       permute(chars.join(""));
@@ -274,4 +299,21 @@ function permute(input) {
   }
   return permArr
 };
-console.log(permute("hi"))
+// console.log(permute("hi"))
+
+// const xhr = new XMLHttpRequest();
+// xhr.open("POST", "https://jsonplaceholder.typicode.com/todos");
+// xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+// const body = JSON.stringify({
+//   userId: 1,
+//   title: "Fix my bugs",
+//   completed: false
+// });
+// xhr.onload = () => {
+//   if (xhr.readyState == 4 && xhr.status == 201) {
+//     console.log(JSON.parse(xhr.responseText));
+//   } else {
+//     console.log(`Error: ${xhr.status}`);
+//   }
+// };
+// xhr.send(body);
