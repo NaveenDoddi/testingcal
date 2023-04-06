@@ -446,10 +446,13 @@
 
 
 
-var s = [1,2,3,4]
+var s = [1,1,2,3,4]
 var target = 5
 var count = 0
 function dhandam(count){
-   return count+1
+    console.log(s.map((i)=>target = target-i))
+    console.log(s.map((j)=>j))
+    return count
 }
+// devuda
 console.log(dhandam(count))
