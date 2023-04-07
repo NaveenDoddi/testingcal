@@ -449,10 +449,20 @@
 var s = [1,1,2,3,4]
 var target = 5
 var count = 0
+s.forEach(element => {
+    // console.log(element)
+    // count++
+})
+var sum = s.reduce((s,r)=>{
+    return s/r
+})
+console.log(sum)
+// s.map((i=>i=="naveen" ? console.log("yes") + count++ + console.log(count) : console.log("no")))
+// console.log(number)
 function dhandam(count){
-    console.log(s.map((i)=>target = target-i))
-    console.log(s.map((j)=>j))
+    // console.log(s.map((i)=>target = target-i))
+    // console.log(s.map((j)=>j))
     return count
 }
 // devuda
-console.log(dhandam(count))
+console.log((count))
