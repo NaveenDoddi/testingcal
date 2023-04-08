@@ -8,3 +8,17 @@ td,tr{
     border: 2px solid black;
     
 }
+
+#div,#div1{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
+#maindiv{
+    border: 2px solid black;
+}
+@media (max-width: 576px) {
+    #div1 {
+        display: none;
+    }
+}
