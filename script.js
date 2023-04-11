@@ -446,7 +446,7 @@
 
 
 
-// // var s = [1,1,2,3,4]
+var s = [1,1,2,3,4]
 // // var target = 5
 // // var count = 0
 // // s.forEach(element => {
@@ -457,7 +457,7 @@
 // //     return s/r
 // // })
 // // // console.log(sum)
-// // // s.map((i=>i=="naveen" ? console.log("yes") + count++ + console.log(count) : console.log("no")))
+// s.map((i=>i==1 ? s.map((i)=>console.log(i)):0))
 // // // console.log(number)
 // // function dhandam(count){
 // //     // console.log(s.map((i)=>target = target-i))
@@ -466,6 +466,67 @@
 // // }
 // // // devuda
 // // // console.log((count))
-var input = "a1b10"
-var arr = input.split("")
-console.log(arr)
+// var input = "a1b10"
+// var arr = input.split("")
+// console.log(arr)
+
+const person = {
+    0:{
+    name:"naveen",
+    age:[20,19,30,20]},
+    1:{
+    name:"usha",
+    age:19
+    }
+}
+
+person[2]={
+    name:"vishnu",
+    age:21
+}
+
+// Objeyct.keys(person).map((i=>i==1 ? Object.values(person).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
+// Object.keys(person).map((i=>i==1 ? Object.values(i).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
+// Object.keys(person).map((i=>i==1 ? Object.values(i).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
+Object.entries(person).map((i)=>i[0]>0&&i[0]<2?console.log(i[1].name):0)
+// var age = person[0].age.some((i=>i==20))
+// console.log(age)
+// console.log(Object.keys(person[0].age))
+
+
+// Boolean = false
+// function run(){
+    
+//     var input = document.getElementById("input").value
+//     document.getElementById("para").innerText = input
+//     document.getElementById("para").contentEditable = "true"
+
+//     document.getElementById("editbtn").style.visibility = "visible"
+//     document.getElementById("delbtn").style.visibility = "visible"
+//     // document.getElementById("editbtn").addEventListener("click",go)
+    
+    
+// }
+// function go(){
+//     document.getElementById("button").style.display = "none"
+//     // var input = document.getElementById("input")
+    
+//     // input.placeholder  = "enter text that you want to edit"
+
+//     document.getElementById("editbtn").innerText = "update"
+    
+//     var input = document.getElementById("input").value
+//     document.getElementById("para").innerText = document.getElementById("para").innerText 
+//     document.getElementById("para").innerText = document.getElementById("input").value 
+//     document.getElementById("input").value = ""
+
+// }
+// function go1(){
+//     document.getElementById("para").innerText = ""
+//     document.getElementById("input").value = ""
+   
+//     document.getElementById("editbtn").style.visibility = "hidden"
+//     document.getElementById("delbtn").style.visibility = "hidden"
+//     document.getElementById("button").style.display = "block"
+//     document.getElementById("button").style.float = "inline"
+// }

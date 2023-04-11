@@ -22,3 +22,8 @@ td,tr{
         display: none;
     }
 }
+
+#editbtn,#delbtn{
+    visibility: hidden;
+
+}
