@@ -27,3 +27,6 @@ td,tr{
     visibility: hidden;
 
 }
+button{
+    border-radius: 15px;
+}

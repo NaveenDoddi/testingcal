@@ -488,45 +488,96 @@ person[2]={
 // Objeyct.keys(person).map((i=>i==1 ? Object.values(person).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
 // Object.keys(person).map((i=>i==1 ? Object.values(i).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
 // Object.keys(person).map((i=>i==1 ? Object.values(i).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
-Object.entries(person).map((i)=>i[0]>0&&i[0]<2?console.log(i[1].name):0)
+// Object.entries(person).map((i)=>i[0]>0&&i[0]<2?console.log(i[1].name):0)
 // var age = person[0].age.some((i=>i==20))
 // console.log(age)
 // console.log(Object.keys(person[0].age))
 
 
 // Boolean = false
-// function run(){
+function run(){
     
-//     var input = document.getElementById("input").value
-//     document.getElementById("para").innerText = input
-//     document.getElementById("para").contentEditable = "true"
+    var input = document.getElementById("input").value
+    document.getElementById("para").innerText = input
+    var list = document.createElement("li")
+    list.innerText = input
+    document.getElementById("para").contentEditable = "true"
+    document.getElementById("list").append(list)
+    document.getElementById("editbtn").style.visibility = "visible"
+    document.getElementById("delbtn").style.visibility = "visible"
+    document.getElementById("activespan").style.visibility = "visible"
+    document.getElementById("editbtn").innerText = "edit"
+    // document.getElementById("editbtn").addEventListener("click",go)
+    
+    
+}
+function go(){
+    // document.getElementById("button").style.display = "none"
+    // var input = document.getElementById("input")
+    
+    // input.placeholder  = "enter text that you want to edit"
 
-//     document.getElementById("editbtn").style.visibility = "visible"
-//     document.getElementById("delbtn").style.visibility = "visible"
-//     // document.getElementById("editbtn").addEventListener("click",go)
+    document.getElementById("editbtn").innerText = "update"
     
-    
-// }
-// function go(){
-//     document.getElementById("button").style.display = "none"
-//     // var input = document.getElementById("input")
-    
-//     // input.placeholder  = "enter text that you want to edit"
+    var input = document.getElementById("input").value
+    var arr = document.getElementsByTagName("li")
+    document.getElementsByTagName("li")[arr.length-1].innerText = input
+    document.getElementById("para").innerText = document.getElementById("para").innerText 
+    document.getElementById("para").innerText = document.getElementById("input").value 
+    document.getElementById("input").value = ""
 
-//     document.getElementById("editbtn").innerText = "update"
-    
-//     var input = document.getElementById("input").value
-//     document.getElementById("para").innerText = document.getElementById("para").innerText 
-//     document.getElementById("para").innerText = document.getElementById("input").value 
-//     document.getElementById("input").value = ""
 
-// }
-// function go1(){
-//     document.getElementById("para").innerText = ""
-//     document.getElementById("input").value = ""
+}
+function go1(){
+    document.getElementById("para").innerText = ""
+    // document.getElementById("input").value = ""
+    var arr = document.getElementsByTagName("li")
+    document.getElementsByTagName("li")[arr.length-1].style.display = "none"
    
-//     document.getElementById("editbtn").style.visibility = "hidden"
-//     document.getElementById("delbtn").style.visibility = "hidden"
-//     document.getElementById("button").style.display = "block"
-//     document.getElementById("button").style.float = "inline"
+    document.getElementById("editbtn").style.visibility = "hidden"
+    document.getElementById("delbtn").style.visibility = "hidden"
+    document.getElementById("activespan").style.visibility = "hidden"
+
+}
+// var count = 0
+// var  B = [2, 1, 1]
+// for (let i=0; i<B.length; i++){
+//     if(B[i] % 2 != 0){
+//         if(B[i+1] % 2 != 0){
+//             B[i]++
+//             B[i+1]++
+//         }else if(B[i-1] % 2 != 0){
+//             B[i]++
+//             B[i-1]++
+//         }else{
+//             B[i]++
+//             B[i+1]++
+//         }
+//         count += 2
+//     }
+//     // console.log(B)
+//     if(i==B.length){
+//         B.every((x)=> x%2==0)?console.log(count):console.log(no)
+//     }
+    
 // }
+// console.log(count)
+// B.map((i=> i%2!=0 ? console.log(i):0))
+
+
+var str = ['Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
+,'Warning: PowerShell detected that might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
+,'Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.']
+
+var sub = "you"
+for(let i=0; i<str.length; i++){
+    var arr = str[i].split(" ")
+    for(let j = 0; j<arr.length; j++){
+        if(sub==arr[j]){
+            console.log("yes")
+        }
+    }
+}
+// var arr = str.split(" ")
+// arr.map((i=> i==sub ? console.log("YES") : console.log("NO")))
+// sub==arr.map((i)=>console.log(i)) ? console.log(i) : console.log("NO")
