@@ -1,4 +1,71 @@
-// // function run(){
+// function run(){
+//   const oauth = {
+//   consumer_key: 'gplDmdY6Xa8UXMdqEj6u4l6r3',
+//   consumer_secret: '47y9qYuFd8BnKYNKtkRdLLyVOq9wyOMpY4X7eKgTZgPSO4IP6l',
+//   token: '1327446257216802816-TysKuv5fk0EptctNQVJdP4rfC98pF7',
+//   token_secret: '8QRNppt9vaiMBNqEpa1ZUBQ5MmwiAoRJjz6WzXxFXT7lD'
+// };
+
+// const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+
+// const requestData = {
+//   method: 'GET',
+//   headers: {
+//     'Authorization': createTwitterAuthHeader(oauth, url, 'GET')
+//   }
+// };
+
+// fetch(url + '?screen_name=twitterapi', requestData)
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error));
+
+// function createTwitterAuthHeader(oauth, url, method) {
+//   const timestamp = Math.floor(Date.now() / 1000);
+//   const nonce = generateNonce();
+//   const parameters = {
+//     oauth_consumer_key: oauth.consumer_key,
+//     oauth_nonce: nonce,
+//     oauth_signature_method: 'HMAC-SHA1',
+//     oauth_timestamp: timestamp,
+//     oauth_token: oauth.token,
+//     oauth_version: '1.0'
+//   };
+
+//   const baseString = createBaseString(parameters, method, url);
+//   const signature = createSignature(baseString, oauth.consumer_secret, oauth.token_secret);
+//   const authHeader = `OAuth oauth_consumer_key="${encodeURIComponent(oauth.consumer_key)}", oauth_nonce="${encodeURIComponent(nonce)}", oauth_signature="${encodeURIComponent(signature)}", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${encodeURIComponent(timestamp)}", oauth_token="${encodeURIComponent(oauth.token)}", oauth_version="1.0"`;
+
+//   return authHeader;
+// }
+
+// function generateNonce() {
+//   return Math.random().toString(36).substring(2);
+// }
+
+// function createBaseString(parameters, method, url) {
+//   const encodedParams = Object.keys(parameters)
+//     .sort()
+//     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(parameters[key])}`)
+//     .join('&');
+
+//   return `${method.toUpperCase()}&${encodeURIComponent(url)}&${encodeURIComponent(encodedParams)}`;
+// }
+
+// function createSignature(baseString, consumerSecret, tokenSecret) {
+//   const signingKey = `${encodeURIComponent(consumerSecret)}&${encodeURIComponent(tokenSecret)}`;
+//   // const signature = crypto.createHmac('sha1', signingKey)
+//     // .update(baseString)
+//     // .digest('base64');
+
+//   // return signature;
+// }
+
+// }
+
+
+
+// function run(){
     
 // //   let kothaDhi = {
 // //     firstname : "naveen",
@@ -470,20 +537,20 @@ var s = [1,1,2,3,4]
 // var arr = input.split("")
 // console.log(arr)
 
-const person = {
-    0:{
-    name:"naveen",
-    age:[20,19,30,20]},
-    1:{
-    name:"usha",
-    age:19
-    }
-}
+// const person = {
+//     0:{
+//     name:"naveen",
+//     age:[20,19,30,20]},
+//     1:{
+//     name:"usha",
+//     age:19
+//     }
+// }
 
-person[2]={
-    name:"vishnu",
-    age:21
-}
+// person[2]={
+//     name:"vishnu",
+//     age:21
+// }
 
 // Objeyct.keys(person).map((i=>i==1 ? Object.values(person).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
 // Object.keys(person).map((i=>i==1 ? Object.values(i).map((i=>i.name=="naveen"?console.log(i.name):0)):0))
@@ -495,50 +562,86 @@ person[2]={
 
 
 // Boolean = false
-function run(){
+// var bool = true
+// function run(){
     
-    var input = document.getElementById("input").value
-    document.getElementById("para").innerText = input
-    var list = document.createElement("li")
-    list.innerText = input
-    document.getElementById("para").contentEditable = "true"
-    document.getElementById("list").append(list)
-    document.getElementById("editbtn").style.visibility = "visible"
-    document.getElementById("delbtn").style.visibility = "visible"
-    document.getElementById("activespan").style.visibility = "visible"
-    document.getElementById("editbtn").innerText = "edit"
-    // document.getElementById("editbtn").addEventListener("click",go)
-    
-    
-}
-function go(){
-    // document.getElementById("button").style.display = "none"
-    // var input = document.getElementById("input")
-    
-    // input.placeholder  = "enter text that you want to edit"
+//     var input = document.getElementById("input").value
+//     // document.getElementById("para").innerText = input
+//     var div = document.createElement("li")
+//     // div.addEventListener("click",go)
+//     var span = document.createElement("span")
 
-    document.getElementById("editbtn").innerText = "update"
+//     span.innerText = input
+//     span.id = "span"
+//     // list.addEventListener("click", go1)
+//     var edit = document.createElement("button")
+//     edit.innerText = "edit"
+//     edit.addEventListener("click",update)
+//     div.append(span,edit)
+//     document.getElementById("list1").append(div)
+
+// }
+
+// function update(clickedElement){
+//     if(bool == true){
+//         clickedElement.srcElement.innerText = "update"
+//         var input = document.getElementById("input").value
+        
+//         document.getElementById("span").innertext = input
+//         console.log(document.getElementById("span").innertext)
+//         bool = false
+//     }else{
+//         clickedElement.srcElement.innerText = "edit"
+//         bool = true
+//     }
+//     console.log(clickedElement.srcElement)
     
-    var input = document.getElementById("input").value
-    var arr = document.getElementsByTagName("li")
-    document.getElementsByTagName("li")[arr.length-1].innerText = input
-    document.getElementById("para").innerText = document.getElementById("para").innerText 
-    document.getElementById("para").innerText = document.getElementById("input").value 
-    document.getElementById("input").value = ""
+// }
+
+// function run(){
+    
+//     var input = document.getElementById("input").value
+//     document.getElementById("para").innerText = input
+//     var list = document.createElement("li")
+//     list.innerText = input
+//     document.getElementById("para").contentEditable = "true"
+//     document.getElementById("list").append(list)
+//     document.getElementById("editbtn").style.visibility = "visible"
+//     document.getElementById("delbtn").style.visibility = "visible"
+//     document.getElementById("activespan").style.visibility = "visible"
+//     document.getElementById("editbtn").innerText = "edit"
+//     // document.getElementById("editbtn").addEventListener("click",go)
+    
+    
+// }
+// function go(){
+//     // document.getElementById("button").style.display = "none"
+//     // var input = document.getElementById("input")
+    
+//     // input.placeholder  = "enter text that you want to edit"
+
+//     document.getElementById("editbtn").innerText = "update"
+    
+//     var input = document.getElementById("input").value
+//     var arr = document.getElementsByTagName("li")
+//     document.getElementsByTagName("li")[arr.length-1].innerText = input
+//     document.getElementById("para").innerText = document.getElementById("para").innerText 
+//     document.getElementById("para").innerText = document.getElementById("input").value 
+//     document.getElementById("input").value = ""
 
 
-}
-function go1(){
-    document.getElementById("para").innerText = ""
-    // document.getElementById("input").value = ""
-    var arr = document.getElementsByTagName("li")
-    document.getElementsByTagName("li")[arr.length-1].style.display = "none"
+// }
+// function go1(){
+//     document.getElementById("para").innerText = ""
+//     // document.getElementById("input").value = ""
+//     var arr = document.getElementsByTagName("li")
+//     document.getElementsByTagName("li")[arr.length-1].style.display = "none"
    
-    document.getElementById("editbtn").style.visibility = "hidden"
-    document.getElementById("delbtn").style.visibility = "hidden"
-    document.getElementById("activespan").style.visibility = "hidden"
+//     document.getElementById("editbtn").style.visibility = "hidden"
+//     document.getElementById("delbtn").style.visibility = "hidden"
+//     document.getElementById("activespan").style.visibility = "hidden"
 
-}
+// }
 // var count = 0
 // var  B = [2, 1, 1]
 // for (let i=0; i<B.length; i++){
@@ -565,19 +668,218 @@ function go1(){
 // B.map((i=> i%2!=0 ? console.log(i):0))
 
 
-var str = ['Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
-,'Warning: PowerShell detected that might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
-,'Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.']
+// var str = ['Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
+// ,'Warning: PowerShell detected that might be using a screen reader and has disabled PSReadLine for compatibility purposes.'
+// ,'Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes.']
 
-var sub = "you"
-for(let i=0; i<str.length; i++){
-    var arr = str[i].split(" ")
-    for(let j = 0; j<arr.length; j++){
-        if(sub==arr[j]){
-            console.log("yes")
-        }
-    }
-}
+// var sub = "you"
+// for(let i=0; i<str.length; i++){
+//     var arr = str[i].split(" ")
+//     for(let j = 0; j<arr.length; j++){
+//         if(sub==arr[j]){
+//             console.log("yes")
+//         }
+//     }
+// }
 // var arr = str.split(" ")
 // arr.map((i=> i==sub ? console.log("YES") : console.log("NO")))
 // sub==arr.map((i)=>console.log(i)) ? console.log(i) : console.log("NO")
+
+
+// var s = 2, m = 19, n = 7
+// var numberofseats = (s+m-1)%n 
+// let count = s-1
+// for(let i = 0; i < numberofseats; i++){
+//     count++
+// }
+// console.log(count)
+// console.log(numberofseats)
+// function run(){
+//     var str = document.getElementById("input").value.toLowerCase().split("")
+//     var alpha = "abcdefghijklmnopqrstuvwxyz".split("")
+//     var num = "1234567890".split("")
+//     var special = "!@#$%^&*()_-+=';:.>,</?"
+//     var alphabool = false, numbool = false, Abool = false, dotbool = false, combool = false, legthbool = true, spacebool = true
+//     var arr = []
+//     const tlds = [".com", ".org", ".net", ".edu", ".gov", ".mil", ".int", ".info", ".biz", ".pro", ".name", ".coop", ".mobi", ".asia", ".eu", ".aero", ".cat", ".jobs", ".tel", ".travel"];
+    
+//     var Acounting = 0
+//     for(let i = 0; i < str.length; i++){
+//         if(str[i]==" "){
+//             spacebool = false
+//         }
+//         if(str[i]=="@"){
+//             Abool = true
+//             if(str[i+1]=="."){
+//                 Abool = false
+//             }
+//             Acounting++
+    
+//             if(Acounting>1){
+//                 Abool = false
+//             }
+            
+//         }
+//         if(str[i]=="."){
+//             dotbool = true
+//             let com = str.slice(i).join("")
+//             combool = tlds.some((i)=> i==com)
+    
+//             if(str[i+1]=="."){
+//                 dotbool = false
+//             }
+            
+//         }
+//         for(let j = 0; j < alpha.length; j++){
+//             if(str[i]==str[j]){
+//                 alphabool = true
+//             }
+            
+//         }
+//         for(let j = 0; j < num.length; j++){
+//             if(str[i]==str[j]){
+//                numbool = true
+//             }
+            
+//         }
+    
+//     }
+//     if(str[str.length-1] == "."){
+//         dotbool = false
+//     }
+//     if(str[str.length-1] == "@" || str[0]=="@"){
+//         Abool = false
+//     }
+//     if(str.lenght>64){
+//         legthbool = false
+//     }
+//     if(alphabool && numbool && Abool && dotbool && combool && legthbool && spacebool){
+//         alert("valid")
+//     }else{
+//         alert("invalid")
+//     }
+// }
+
+// // console.log(str)
+
+// var input = "feedthedog"
+// var input = 'haveaniceday'
+// // var input = 'chill outeeeee'
+// var input = "wclwfoznbmyycxvaxagjhtexdkwjqhlojykopldsxesbbnezqmixfpujbssrbfhlgubvfhpfliimvmnny"
+
+// input = input.split(" ").join("")
+// console.log(input.length)
+// var arr = []
+// var col = Math.floor(Math.sqrt(input.length))
+
+
+// if(col * col < input.length){
+//     col = col + 1
+//     var row = col
+// }else if(col * col == input.length){
+//     var row = col
+// }else{
+//     var row = col + 1
+
+// }
+
+// var count = 0
+// var str = ""
+// for(let i = 0; i < col; i++){
+//     arr[i] = []
+//     for( j = 0; j < row; j++){
+//         arr[i][j] = input[count]
+//         count++
+//         // if(count == input.length){
+//         //     break
+//         // }
+//     }
+    
+// }
+// console.log(arr)
+// count = 0
+// for(let i = 0; i < row; i++){
+//     for( j = 0; j < col; j++){
+//         if(arr[j][count] != undefined)
+//         str += arr[j][count]
+        
+//     }
+//     str += " "
+//     count++
+// }
+
+
+// console.log(str)
+
+
+// var start = 35
+// var end = 70
+// var arr = []
+// var count = 0
+// var startRoot = Math.floor( Math.sqrt(start) )
+// var endRoot = Math.floor( Math.sqrt(end) )
+// // for( let i = start; i <= end; i++){
+// //     if(Math.floor(Math.sqrt(i)) == Math.sqrt(i)){
+// //         arr.push(i)
+// //         count++
+// //     }
+// // }
+// if(Math.floor(Math.sqrt(start)) == Math.sqrt(start)){
+//     console.log(endRoot - startRoot +1)
+// }else{
+//     console.log(endRoot - startRoot)
+// }
+
+// console.log(count)
+
+// const person = {
+//   name:"naveen",
+//   age: [20,50],
+
+//   sayhi(){
+//     console.log(this["age"][0])
+//     console.log(Object.keys(this).length)
+//   }
+// }
+// var person1 = {...person} 
+// // var person1 = person
+// // var person1 = {}
+// // for (let key in person) {
+// //   person1[key] = person[key]
+// // }
+// console.log(person === person1)
+// // person.age = [10]
+// person1.sayhi()
+
+// var s = "abcefg"
+// var t = "abcef"
+// var k = 3
+// var bool = false
+// var count = 0
+// if(s == t){
+//   console.log(s.length + t.length + 1)
+// }else{
+  
+//   if(s.length > t.length){
+//     var length = s.length
+//   }else{
+//     var length = t.length
+//   }
+//   for(let i = 0; i < length; i++){
+//     if(s[i] != t[i]){
+//       console.log(t[i],s.length - i)
+//      count = s.length - i + t.length - i
+//      console.log(count)
+//      break
+//     }
+    
+//   }
+// }
+
+
+
+var arr = [1,2,3,4,5]
+arr.shift(arr.pop())
+// arr.forEach((i)=> i == 2 ? console.log(i) : "")
+var newarr = arr.map((i)=>i == 2 ? i : "")
+console.log(newarr)
