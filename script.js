@@ -878,8 +878,24 @@ var s = [1,1,2,3,4]
 
 
 
-var arr = [1,2,3,4,5]
-arr.shift(arr.pop())
-// arr.forEach((i)=> i == 2 ? console.log(i) : "")
-var newarr = arr.map((i)=>i == 2 ? i : "")
-console.log(newarr)
+// var arr = [1,2,3,4,5]
+// arr.shift(arr.pop())
+// // arr.forEach((i)=> i == 2 ? console.log(i) : "")
+// var newarr = arr.map((i)=>i == 2 ? i : "")
+// console.log(newarr)
+
+var bill = [ 3, 10, 2, 9 ]
+var k = 1
+var b = 4
+
+bill.splice(k,1)
+var sum = bill.reduce((a,i) => a+i)
+if(sum / 2 == b){
+    console.log("anna")
+}else if(sum / 2 < b){
+    console.log(b - sum / 2)
+}
+// console.log(sum)
+var arr = [1,2,3,4,5,6,7,8,9,0,2]
+
+arr.filter((i)=> i==2 ? console.log(i) : "")
