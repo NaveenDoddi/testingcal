@@ -107,18 +107,18 @@
 // //     }
 // // }
 
-//   //   const options = {
-//   //     method: 'GET',
-//   //     headers: {
-//   //         'X-RapidAPI-Key': '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
-//   //         'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-//   //     }
-//   // };
+//     const options = {
+//       method: 'GET',
+//       headers: {
+//           'X-RapidAPI-Key': '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
+//           'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+//       }
+//   };
   
-//   // fetch("https://deezerdevs-deezer.p.rapidapi.com/infos",options)
-//   //     .then(response => response.json())
-//   //     .then(data => console.log(data.ads.audio))
-//   //     .catch(error => console.error(error));
+//   fetch("https://deezerdevs-deezer.p.rapidapi.com/infos",options)
+//       .then(response => response.json())
+//       .then(data => console.log(data.ads.audio))
+//       .catch(error => console.error(error));
 
 
 
@@ -902,26 +902,94 @@ var s = [1,1,2,3,4]
 // arr.filter((i)=> i==2 ? console.log(i) : "")
 
 // var n = 3
-var line = [3,4,7]
-for(let i = 0; i < line.length; i++){
-    var digit = (2**line[i]).toString()
-    var sum = 0
-    // console.log((digit))
+// var line = [3,4,7]
+// for(let i = 0; i < line.length; i++){
+//     var digit = (2**line[i]).toString()
+//     var sum = 0
+//     // console.log((digit))
     
-    for(let j = 0; j < digit.length; j++){
-        sum += Number(digit[j])
-    }
+//     for(let j = 0; j < digit.length; j++){
+//         sum += Number(digit[j])
+//     }
     
-    console.log(sum)
+    // console.log(sum)
     
-}
+// }
 
-var n = 3
-var line = [3,4,7]
-for(let i = 0; i < line.length; i++){
-    var digit = (2**line[i]).toString().split("")
-    var sum = 0
-    digit.forEach(( i)=> sum += (Number(i)))
-    console.log(sum)
+// var n = 3
+// var line = [3,4,1]
+// for(let i = 0; i < line.length; i++){
+//     var digit = (2**line[i]).toString().split("")
+//     var sum = 0
+//     digit.forEach((i)=> sum += (Number(i)))
+//     console.log(sum)
     
+// }
+// var n = 10
+// var arr = []
+// var sum = 0
+// for(let i = 2; i < n; i++){
+    
+//     if(i % 3 == 0 || i % 5 == 0){
+//         arr.push(i)
+//     }
+//     // console.log(arr)
+//     if(arr[0] != null){
+//         var sum = arr.reduce((a, i)=> a+i)
+//     }
+// }
+// console.log(sum)
+
+var sum = 1
+var n = 10
+n -= 1
+n = Math.floor(n/3)
+var arr = []
+while(n>0){
+    n--
+    sum += 3
+}
+// for(let i = 0; i < Math.floor(n/3); i++){
+//     sum *= 3
+//     arr.push(3*i)
+// }
+// sum = 0
+// for(let i = 1; i <= Math.floor(n/5); i++){
+//     sum += 5*i
+//     arr.push(5*i)
+// }
+
+// arr.sort((a,b)=> a-b)
+// for(let i = 0; i <arr.length; i++){
+//     if(arr[i] == arr[i+1]){
+//         arr.splice(i,1)
+//         i--
+//     }
+// }
+// var sum = arr.reduce((a,i)=> a+i)
+// console.log(sum)
+
+//   let naav = fetch('https://reqres.in/api/users')      //api for the get request
+  
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+// //   .then(())
+// console.log(naav)
+var n = 89
+var sum = 3
+var arr = [1,2]
+var i = 1
+if(n > 2){
+    while(sum < n){
+        arr[i+1] = arr[i] + arr[i-1]
+        sum += arr[i]
+        i++
+        
+    }
+    // console.log(arr)
+
+    var even = arr.filter((i)=> i%2==0)
+    console.log(even.reduce((a,i) => a+i))
+}else{
+    console.log(0)
 }
