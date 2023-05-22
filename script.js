@@ -940,15 +940,15 @@ var s = [1,1,2,3,4]
 // }
 // console.log(sum)
 
-var sum = 1
-var n = 10
-n -= 1
-n = Math.floor(n/3)
-var arr = []
-while(n>0){
-    n--
-    sum += 3
-}
+// var sum = 1
+// var n = 10
+// n -= 1
+// n = Math.floor(n/3)
+// var arr = []
+// while(n>0){
+//     n--
+//     sum += 3
+// }
 // for(let i = 0; i < Math.floor(n/3); i++){
 //     sum *= 3
 //     arr.push(3*i)
@@ -975,21 +975,46 @@ while(n>0){
 //   .then(data => console.log(data))
 // //   .then(())
 // console.log(naav)
-var n = 144
-var arr = [1,2]
+// var n = 144
+// var arr = [1,2]
 
-var i = 2
-var sum = arr[i-1] + arr[i-2]
-if(n > 2){
-    while(sum <= n){
-        arr.push(sum)
-        i++ 
-        sum = arr[i-1] + arr[i-2]
+// var i = 2
+// var sum = arr[i-1] + arr[i-2]
+// if(n > 2){
+//     while(sum <= n){
+//         arr.push(sum)
+//         i++ 
+//         sum = arr[i-1] + arr[i-2]
+//     }
+//     // console.log(arr)
+//     var even = arr.filter((i)=> i%2==0)
+//     console.log(even.reduce((a,i) => a+i))
+// }else{
+//     console.log(0)
+// }
+
+let person = {
+    name:"naveen",
+    password:123
+}
+
+function run(){
+
+    localStorage.setItem("statusyes", "welcome")
+    localStorage.setItem("statusno", "page not found")
+    var name = document.getElementById("name").value
+    var password= document.getElementById("pass").value
+
+    if(name == person.name){
+        if(password == person.password){
+            document.getElementById("demo").innerText = localStorage.getItem("statusyes")
+        }else{
+            document.getElementById("demo").innerText = localStorage.getItem("statusno")
+        }
+
+    }else{
+        document.getElementById("demo").innerText = localStorage.getItem("statusno")
     }
-    // console.log(arr)
-    var even = arr.filter((i)=> i%2==0)
-    console.log(even.reduce((a,i) => a+i))
-}else{
-    console.log(0)
+
 }
 
