@@ -975,21 +975,21 @@ while(n>0){
 //   .then(data => console.log(data))
 // //   .then(())
 // console.log(naav)
-var n = 89
-var sum = 3
+var n = 144
 var arr = [1,2]
-var i = 1
+
+var i = 2
+var sum = arr[i-1] + arr[i-2]
 if(n > 2){
-    while(sum < n){
-        arr[i+1] = arr[i] + arr[i-1]
-        sum += arr[i]
-        i++
-        
+    while(sum <= n){
+        arr.push(sum)
+        i++ 
+        sum = arr[i-1] + arr[i-2]
     }
     // console.log(arr)
-
     var even = arr.filter((i)=> i%2==0)
     console.log(even.reduce((a,i) => a+i))
 }else{
     console.log(0)
 }
+
