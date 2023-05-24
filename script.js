@@ -993,37 +993,59 @@ var s = [1,1,2,3,4]
 //     console.log(0)
 // }
 
-let person = {
-    name:"naveen",
-    password:123
-}
+let person = [
+  {
+    name:"Naveen Doddi",
+    password:123,
+    DOB: "26-10-2003",
+    Gender:"male",
+    City: "tirupati",
+    email:"prasadnaveen847@gmail.com",
+    username:"naveen26",
+    
+  },
+  {
+    name:"Virat Kohli",
+    password: 18,
+    DOB: "5-11-1988",
+    Gender:"male",
+    City: "Delhi",
+    email:"virat18@gmail.com",
+    username:"virat18",
+  },
+  
+]
 var obj = {}
 function run(){
-    
-        // Generate a token
-        const token = generateToken();
-      
-        // Save the token in sessionStorage
-        sessionStorage.setItem('token', token);
-        const nextPageUrl = 'nextPage.html?token=' + encodeURIComponent(token);
+  // const token = generateToken();
+  var username = document.getElementById("name").value
+  var password = document.getElementById("pass").value
+  console.log(username)
 
-        
-        // Navigate to the next page
-        window.location.href = nextPageUrl;
-      
-        // Navigate to the next page
-        // window.location.href = 'nextpage.html';
+  const token = "home"
+  sessionStorage.setItem('token', token);
+  const nextPageUrl = 'nextpage.html?token=' + token
 
+  person.forEach((i)=> i.username == username ? i.password == password ? sessionStorage.setItem("user",JSON.stringify(i)) + (window.location.href = nextPageUrl):"":"")
+  if(person.some((i)=> i.username == username ? i.password == password :"")){
+
+  }else{
+    alert("in correct details")
+  }
+  // if(person.some((i)=> i.name == username ? i.password == password :"")){
+  //   window.location.href = nextPageUrl
+  // }else{
+  //   alert("incorrect details")
+  // }
       
-      // Token generation function
-      function generateToken() {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let token = '';
-        for (let i = 0; i < 10; i++) {
-          token += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        return token;
-      }
+      // function generateToken() {
+      //   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      //   let token = '';
+      //   for (let i = 0; i < 10; i++) {
+      //     token += characters.charAt(Math.floor(Math.random() * characters.length));
+      //   }
+      //   return token;
+      // }
 
     // const url = 'https://actor-movie-api1.p.rapidapi.com/getid/+"allu arjun"+?apiKey=62ffac58c57333a136053150eaa1b587';
     // // 'https://actor-movie-api1.p.rapidapi.com/getid/prabhas?apiKey=62ffac58c57333a136053150eaa1b587';

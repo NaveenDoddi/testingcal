@@ -1,32 +1,45 @@
+body{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+div{
+    padding: 10px;
+    /* text-align: center; */
+    background-color: black;
+    color: white;
+    height: 450px;
+    width: 350px;
+    border: 2px solid black;
+}
 table{
     border : 2px solid black;
     border-collapse: collapse;
+
 }
-td,tr{
-    height: 100px;
-    width: 100px;
+
+button,input{
+    width: 100%;
+    padding: 10px;
+}
+p{
+    visibility: hidden;
+}
+h2,h3{
+    text-align: center;
+}
+th{
+    color: white;
+    background-color: black;
+}
+tr{
+    color: white;
+    background-color: rgb(29, 109, 14);
+}
+td{
+    height: 50px;
+    width: 360px;
     border: 2px solid black;
     
-}
-
-#div,#div1{
-    height: 100px;
-    width: 100px;
-    border: 2px solid black;
-}
-#maindiv{
-    border: 2px solid black;
-}
-@media (max-width: 576px) {
-    #div1 {
-        display: none;
-    }
-}
-
-#editbtn,#delbtn{
-    visibility: hidden;
-
-}
-button{
-    border-radius: 15px;
 }
