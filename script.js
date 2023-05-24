@@ -997,24 +997,47 @@ let person = {
     name:"naveen",
     password:123
 }
-
+var obj = {}
 function run(){
+    
+        // Generate a token
+        const token = generateToken();
+      
+        // Save the token in sessionStorage
+        sessionStorage.setItem('token', token);
+        const nextPageUrl = 'nextPage.html?token=' + encodeURIComponent(token);
 
-    localStorage.setItem("statusyes", "welcome")
-    localStorage.setItem("statusno", "page not found")
-    var name = document.getElementById("name").value
-    var password= document.getElementById("pass").value
+        
+        // Navigate to the next page
+        window.location.href = nextPageUrl;
+      
+        // Navigate to the next page
+        // window.location.href = 'nextpage.html';
 
-    if(name == person.name){
-        if(password == person.password){
-            document.getElementById("demo").innerText = localStorage.getItem("statusyes")
-        }else{
-            document.getElementById("demo").innerText = localStorage.getItem("statusno")
+      
+      // Token generation function
+      function generateToken() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let token = '';
+        for (let i = 0; i < 10; i++) {
+          token += characters.charAt(Math.floor(Math.random() * characters.length));
         }
+        return token;
+      }
 
-    }else{
-        document.getElementById("demo").innerText = localStorage.getItem("statusno")
-    }
+    // const url = 'https://actor-movie-api1.p.rapidapi.com/getid/+"allu arjun"+?apiKey=62ffac58c57333a136053150eaa1b587';
+    // // 'https://actor-movie-api1.p.rapidapi.com/getid/prabhas?apiKey=62ffac58c57333a136053150eaa1b587';
+    // const options = {
+    // method: 'GET',
+    // headers: {
+    // 'X-RapidAPI-Key': '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
+    //                 //   '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
+    // 'X-RapidAPI-Host': 'actor-movie-api1.p.rapidapi.com'
+    // }
 
+    // };
+    // fetch(url, options)
+    // .then(response => response.json())
+    // .then((data)=> console.log(data))
 }
 
