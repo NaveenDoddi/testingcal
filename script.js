@@ -1015,51 +1015,25 @@ let person = [
   },
   
 ]
-var obj = {}
 function run(){
-  // const token = generateToken();
+
   var username = document.getElementById("name").value
   var password = document.getElementById("pass").value
-  console.log(username)
 
   const token = "home"
   sessionStorage.setItem('token', token);
+  // sessionStorage.setItem("key","naveen")
   const nextPageUrl = 'nextpage.html?token=' + token
 
   person.forEach((i)=> i.username == username ? i.password == password ? sessionStorage.setItem("user",JSON.stringify(i)) + (window.location.href = nextPageUrl):"":"")
-  if(person.some((i)=> i.username == username ? i.password == password :"")){
+
+  if(person.some((i)=> i.username == username ? i.password == password : "")){
 
   }else{
     alert("in correct details")
   }
-  // if(person.some((i)=> i.name == username ? i.password == password :"")){
-  //   window.location.href = nextPageUrl
-  // }else{
-  //   alert("incorrect details")
-  // }
-      
-      // function generateToken() {
-      //   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      //   let token = '';
-      //   for (let i = 0; i < 10; i++) {
-      //     token += characters.charAt(Math.floor(Math.random() * characters.length));
-      //   }
-      //   return token;
-      // }
 
-    // const url = 'https://actor-movie-api1.p.rapidapi.com/getid/+"allu arjun"+?apiKey=62ffac58c57333a136053150eaa1b587';
-    // // 'https://actor-movie-api1.p.rapidapi.com/getid/prabhas?apiKey=62ffac58c57333a136053150eaa1b587';
-    // const options = {
-    // method: 'GET',
-    // headers: {
-    // 'X-RapidAPI-Key': '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
-    //                 //   '754ee67f44msh73315c567c13cc6p163e85jsn2f883ac74a0c',
-    // 'X-RapidAPI-Host': 'actor-movie-api1.p.rapidapi.com'
-    // }
-
-    // };
-    // fetch(url, options)
-    // .then(response => response.json())
-    // .then((data)=> console.log(data))
 }
+
+
 

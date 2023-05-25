@@ -1,6 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search)
 const token = urlParams.get('token')
 
+// var token = window.location.href.split("token=")[1]
+
+console.log(token)
+console.log(sessionStorage.getItem("token"))
 if(sessionStorage.getItem("token") != token){
     window.location.href = "index.html"
 }
@@ -16,5 +20,3 @@ function load(){
     document.getElementById("email").innerText = userdata.email
     document.getElementById("username").innerText = userdata.username
 }
-
-
