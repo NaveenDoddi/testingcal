@@ -993,47 +993,99 @@ var s = [1,1,2,3,4]
 //     console.log(0)
 // }
 
-let person = [
-  {
-    name:"Naveen Doddi",
-    password:123,
-    DOB: "26-10-2003",
-    Gender:"male",
-    City: "tirupati",
-    email:"prasadnaveen847@gmail.com",
-    username:"naveen26",
+// let person = [
+//   {
+//     name:"Naveen Doddi",
+//     password:123,
+//     DOB: "26-10-2003",
+//     Gender:"male",
+//     City: "tirupati",
+//     email:"prasadnaveen847@gmail.com",
+//     username:"naveen26",
     
-  },
-  {
-    name:"Virat Kohli",
-    password: 18,
-    DOB: "5-11-1988",
-    Gender:"male",
-    City: "Delhi",
-    email:"virat18@gmail.com",
-    username:"virat18",
-  },
+//   },
+//   {
+//     name:"Virat Kohli",
+//     password: 18,
+//     DOB: "5-11-1988",
+//     Gender:"male",
+//     City: "Delhi",
+//     email:"virat18@gmail.com",
+//     username:"virat18",
+//   },
   
-]
-function run(){
+// ]
+// function run(){
 
-  var username = document.getElementById("name").value
-  var password = document.getElementById("pass").value
+//   var username = document.getElementById("name").value
+//   var password = document.getElementById("pass").value
 
-  const token = "home"
-  sessionStorage.setItem('token', token);
-  // sessionStorage.setItem("key","naveen")
-  const nextPageUrl = 'nextpage.html?token=' + token
+//   const token = "home"
+//   sessionStorage.setItem('token', token);
+//   // sessionStorage.setItem("key","naveen")
+//   const nextPageUrl = 'nextpage.html?token=' + token
 
-  person.forEach((i)=> i.username == username ? i.password == password ? sessionStorage.setItem("user",JSON.stringify(i)) + (window.location.href = nextPageUrl):"":"")
+//   person.forEach((i)=> i.username == username ? i.password == password ? sessionStorage.setItem("user",JSON.stringify(i)) + (window.location.href = nextPageUrl):"":"")
 
-  if(person.some((i)=> i.username == username ? i.password == password : "")){
+//   if(person.some((i)=> i.username == username ? i.password == password : "")){
 
-  }else{
-    alert("in correct details")
+//   }else{
+//     alert("in correct details")
+//   }
+
+// }
+
+// var triangle = [[3],[4,6],[2,4,6],[8,5,9,3]]
+// // console.log(triangle.findIndex((i)=> i))
+// var sum = 0
+// var count = 0
+// var index = 0
+// for(i = 0; i < triangle.length; i++){
+//   var sub = triangle[i].slice(index, index+2)
+  
+//   index = sub.findIndex((i)=> i==Math.max(...sub))
+//   sum += Math.max(...sub)
+  
+//   console.log(sub)
+// }
+// console.log(sum)
+
+// var arr = [8,5,9,3]
+// console.log(arr.slice(2,3))
+
+var num = 13195
+// ans = 5,7,13,29
+// function factors(num)
+// for(let i = 0; i < Math.floor(num/2); i++){
+//   if(num%i==0){
+//     factors(i)
+//   }
+// }
+function factorize(n, factorList = []) {
+  if (n <= 1) {
+    return factorList; 
   }
 
+  for (let i = 2; i <= n; i++) {
+    if (n % i === 0) { 
+      factorList.push(i);
+      return factorize(n / i, factorList); 
+    }
+  }
 }
+var factors = factorize(num)
+// console.log(factors)
+var arr= []
+for(let i = 0; i<factors.length; i++){
 
+  arr.push(prime(factors[i]))
+}
+console.log(Math.max(...arr))
 
-
+function prime(n){
+  var arr = factorize(n)
+  // console.log(arr)
+  if(arr.length == 1){
+    return arr[0]
+  }
+}
