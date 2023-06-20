@@ -513,7 +513,7 @@
 
 
 
-var s = [1,1,2,3,4]
+// var s = [1,1,2,3,4]
 // // var target = 5
 // // var count = 0
 // // s.forEach(element => {
@@ -1053,39 +1053,115 @@ var s = [1,1,2,3,4]
 // var arr = [8,5,9,3]
 // console.log(arr.slice(2,3))
 
-var num = 13195
-// ans = 5,7,13,29
-// function factors(num)
-// for(let i = 0; i < Math.floor(num/2); i++){
-//   if(num%i==0){
-//     factors(i)
+// var num = 20
+// var arr= []
+// function prime(n){
+//   var count = 0 
+//   for(let i = 1; i <= n; i++){
+//     if(n%i==0){
+//       count++
+//     }
+//   }
+//   if( count <= 2){
+//     return n
 //   }
 // }
-function factorize(n, factorList = []) {
-  if (n <= 1) {
-    return factorList; 
-  }
+// // console.log(prime(7))
 
-  for (let i = 2; i <= n; i++) {
-    if (n % i === 0) { 
-      factorList.push(i);
-      return factorize(n / i, factorList); 
-    }
-  }
-}
-var factors = factorize(num)
+// function factorize(n, factorList = []) {
+//   if (n <= 1) {
+//     return factorList; 
+//   }
+
+//   for (let i = 2; i <= n; i++) {
+//     if (n % i == 0) {
+//       // prime(i)
+//       factorList.push(i);
+//       return factorize(n / i, factorList);
+//     }
+//   }
+// }
+
+// var factors = factorize(num);
 // console.log(factors)
-var arr= []
-for(let i = 0; i<factors.length; i++){
 
-  arr.push(prime(factors[i]))
-}
-console.log(Math.max(...arr))
+// for(let i = 0; i<factors.length; i++){
 
-function prime(n){
-  var arr = factorize(n)
-  // console.log(arr)
-  if(arr.length == 1){
-    return arr[0]
-  }
+//   arr.push(prime(factors[i]))
+
+// }
+// console.log(Math.max(...arr))
+
+
+// var factors = []
+// function factorize(n) {
+//     if (n <= 1) {
+//         factors.push(1)
+//         return 0 
+//     }
+    
+//     for (let i = 2; i <= n; i++) {
+//         if(n % i == 0) { 
+//             factors.push(i)
+//             factorize(n / i) 
+//             return 0
+//         }
+//     }
+// }
+// factorize(1010108)
+
+// console.log(Math.max(...factors))
+
+// var input = "naveen is a good boy"
+// var value = " nach nach "
+
+// input.split(" ").forEach((i)=> {
+//     value.split(" ").forEach((j)=> j == i ? console.log(i)  :"")
+// })
+// Object.entries(object.articles).map((i)=>i[1].title.split(" ").forEach((j)=> value.split(" ").forEach((k)=> k.toLowerCase() == j.toLowerCase() ? console.log(i):"")))
+// var result = Object.entries(object.articles)
+
+// var n = 20
+// var result = n
+
+// while(n>1){
+//     n--
+//     result *= n
+// }
+
+// console.log(result)
+
+
+// function followers(input){
+//     var followersCount = document.getElementById("")
+// }
+// function run(){
+//     fetch("https://api.github.com/users/NaveenDoddi")
+//     .then(response => response.json())
+//     .then((data)=> console.table(data))
+// }
+
+var b = "RBY_YBRX"
+var arr = []
+var arr1 = []
+var count = 0
+for(let i = 0; i < b.length; i++){
+    for(let j = i+1 ; j < b.length && b[i] != "_"; j++){
+        if(b[i]==b[j]){
+            arr.push(b[j])
+            count++
+        }
+
+    }
+    if(count == 0){
+        // return "NO"
+    }
+    arr1.push(count)
+    count = 0
+    arr.push(b[i])
+    if(arr.length == b.length){
+        break
+    }
 }
+console.log(arr,arr1)
+return "YES"
