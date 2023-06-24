@@ -1141,27 +1141,39 @@
 //     .then((data)=> console.table(data))
 // }
 
-var b = "RBY_YBRX"
+// var b = "RBY_YBRX"
+// var arr = []
+// var arr1 = []
+// var count = 0
+// for(let i = 0; i < b.length; i++){
+//     for(let j = i+1 ; j < b.length && b[i] != "_"; j++){
+//         if(b[i]==b[j]){
+//             arr.push(b[j])
+//             count++
+//         }
+
+//     }
+//     if(count == 0){
+//         // return "NO"
+//     }
+//     arr1.push(count)
+//     count = 0
+//     arr.push(b[i])
+//     if(arr.length == b.length){
+//         break
+//     }
+// }
+
+// console.log(arr,arr1)
+// return "YES"
+
+var str = "NAVEEN".split("")
+var key = 5
 var arr = []
-var arr1 = []
-var count = 0
-for(let i = 0; i < b.length; i++){
-    for(let j = i+1 ; j < b.length && b[i] != "_"; j++){
-        if(b[i]==b[j]){
-            arr.push(b[j])
-            count++
-        }
+str.map((i)=>arr.push(i.charCodeAt()+key))
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] >=  60 && arr[i] <= 90){
 
     }
-    if(count == 0){
-        // return "NO"
-    }
-    arr1.push(count)
-    count = 0
-    arr.push(b[i])
-    if(arr.length == b.length){
-        break
-    }
 }
-console.log(arr,arr1)
-return "YES"
+arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
