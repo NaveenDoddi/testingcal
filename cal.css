@@ -42,3 +42,25 @@ td{
     border: 2px solid black;
     
 } */
+
+
+body {
+    background-color: powderblue;
+}
+#haa{
+    color: blue;
+}
+p{
+    text-align: center;
+    color: blue;
+}
+div{
+    height: 200px;
+    width: 300px;
+    border: 2px solid black;
+}
+#small{
+    height: 50px;
+    width: 300px;
+    border: 2px solid black;
+}

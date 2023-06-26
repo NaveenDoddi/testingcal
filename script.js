@@ -1170,10 +1170,14 @@
 var str = "NAVEEN".split("")
 var key = 5
 var arr = []
-str.map((i)=>arr.push(i.charCodeAt()+key))
-for(let i = 0; i < arr.length; i++){
-    if(arr[i] >=  60 && arr[i] <= 90){
+str.map((i)=>arr.push(i.charCodeAt()-64))
+console.log(arr)
+var nam = ["abc", "baabc","aaabc",3,41]
+console.log(nam.sort())
 
-    }
-}
-arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
+// for(let i = 0; i < arr.length; i++){
+//     if(arr[i] >=  60 && arr[i] <= 90){
+
+//     }
+// }
+// arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
