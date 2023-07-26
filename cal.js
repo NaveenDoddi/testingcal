@@ -51,3 +51,6 @@ function push2(){
 
     document.getElementById("input1").innerText=data+"2"
 }
+
+// date : 26/7/2023
+
