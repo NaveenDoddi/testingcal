@@ -1203,6 +1203,8 @@ function handleClick(clickedElement){
 
 function person(clickedElement){
 
+
+
     count2++
 
     // document.getElementById("PersonSound").play()
@@ -1226,8 +1228,7 @@ function person(clickedElement){
         }
         
     }
-    console.log(personarr)
-    
+    var personcount2arr = []
     for(let i = 0; i < 8; i++){
         var personcount = 0;
         for(let j = 0; j < 5; j++){
@@ -1236,51 +1237,58 @@ function person(clickedElement){
                 if(arr1[i][j] == personarr[x]){
                     personcount++;
                 }
+            }
+        }
+        // console.log("personcount", personcount)
+        if(personcount == 3){
+            
+            console.log("person win")
+            document.getElementById("EndSound").play()
+            document.getElementById("result").innerText = "You-Win";
+            document.getElementById("result").style.backgroundColor = "red";
+            setTimeout(() => {
+                // window.location.reload();
+            }, 3000);
+            return 0
+
+        }else if(personcount == 2){
+            personcount2arr.push(arr1[i])
+            
+            
+            // if(thiscounter == 0){
+            //     var count1 = Math.floor(Math.random() * arr.length);
+            //     console.log("random", arr[count1])
+            //     AI(arr[count1])
+            //     return 0;
+            // }
+           
+            
+        }else if(personcount == 1 && count2 < 3){
+            var count1 = Math.floor(Math.random() * arr.length);
+            console.log("run", arr[count1])
+            // console.log(arr1[i])
+            AI(arr[count1]);
+            return 0;
+        }
+
+    }
+    console.log(personcount2arr)
+    for(let i = 0; i < personcount2arr.length; i++){
+        for(let y = 0; y < personcount2arr[i].length; y++){
+            if(document.getElementById(personcount2arr[i][y]).style.backgroundColor == ""){
                 
-                if(personcount == 3){
-                    
-                    document.getElementById("EndSound").play()
-                    document.getElementById("result").innerText = "You-Win";
-                    document.getElementById("result").style.backgroundColor = "red";
-    
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 3000);
-                    return 0;
-
-                }else if(personcount == 2){
-                   console.log(personcount)
-                    for(let y = 0; y < 3; y++){
-                        if(document.getElementById(arr1[i][y]).style.backgroundColor != "red" && document.getElementById(arr1[i][y]).style.backgroundColor != "lightblue"){
-                            var count1 = arr1[i][y]
-                            console.log("count1",count1)
-                            
-                            AI(count1)
-                            thiscounter++
-                            return 0;
-                            
-                        } 
-                    }
-                    
-                    if(thiscounter == 0){
-                        var count1 = Math.floor(Math.random() * arr.length);
-                        console.log("this", arr[count1])
-                        AI(arr[count1])
-                        return 0;
-                    }
-                   
-                    
-                }else if(personcount == 1 && count2 == 1){
-                    var count1 = Math.floor(Math.random() * arr.length);
-                    console.log("run", arr[count1])
-                        
-                    AI(arr[count1])
-                    
-                }
-
+                var count1 = personcount2arr[i][y]
+                
+                console.log("count1",count1)
+                
+                AI(count1)
+                thiscounter++
+                return 0;
+                
             } 
         }
     }
+    
     if(count2 == 9 && personcount < 3){
         closing()
     }
