@@ -1280,7 +1280,6 @@ function person(clickedElement){
                 var count1 = personcount2arr[i][y]
                 
                 console.log("count1",count1)
-                
                 AI(count1)
                 thiscounter++
                 return 0;
