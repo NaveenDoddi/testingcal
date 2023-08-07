@@ -1283,7 +1283,7 @@ function person(clickedElement){
                 AI(count1)
                 thiscounter++
                 return 0;
-                
+                // sem ki chaduvuthunna mahaprabhu
             } 
         }
     }
