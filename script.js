@@ -1285,6 +1285,7 @@ function person(clickedElement){
                 return 0;
                 // sem ki chaduvuthunna mahaprabhu
                 // sem ki chaduvuthunna mahaprabhu
+                // sem ki chaduvuthunna mahaprabhu
             } 
         }
     }
