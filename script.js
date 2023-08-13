@@ -1304,6 +1304,7 @@ function AI(count1){
     count2++
     
     if(arr.length != 0){
+        
         // var count1 = Math.floor(Math.random() * arr.length);
         if(document.getElementById(count1).style.backgroundColor != "red"){
     
@@ -1314,7 +1315,6 @@ function AI(count1){
             arr.splice(arr.findIndex((i) => i == count1),1);
             // arr[arr.findIndex((i) => i == count1)] = ""
             count = 0;
-    
         } 
     }
 
