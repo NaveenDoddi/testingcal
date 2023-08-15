@@ -1317,6 +1317,7 @@ function AI(count1){
             count = 0;
         } 
     }
+    
 
     for(let i = 0; i < 8; i++){
         var AIcount = 0;
