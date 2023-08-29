@@ -1181,3 +1181,5 @@ console.log(nam.sort())
 //     }
 // }
 // arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
+
+// fjks
