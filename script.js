@@ -1167,13 +1167,13 @@
 // console.log(arr,arr1)
 // return "YES"
 
-var str = "NAVEEN".split("")
-var key = 5
-var arr = []
-str.map((i)=>arr.push(i.charCodeAt()-64))
-console.log(arr)
-var nam = ["abc", "baabc","aaabc",3,41]
-console.log(nam.sort())
+// var str = "NAVEEN".split("")
+// var key = 5
+// var arr = []
+// str.map((i)=>arr.push(i.charCodeAt()-64))
+// console.log(arr)
+// var nam = ["abc", "baabc","aaabc",3,41]
+// console.log(nam.sort())
 
 // for(let i = 0; i < arr.length; i++){
 //     if(arr[i] >=  60 && arr[i] <= 90){
@@ -1181,5 +1181,183 @@ console.log(nam.sort())
 //     }
 // }
 // arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
+<<<<<<< HEAD
 
 // fjks
+=======
+ 
+
+
+var count = Math.floor(Math.random() * 2)
+var count2 = 0
+var maincount = 0
+var AIarr = []
+var personarr = [];
+var arr = [0,1,2,3,4,5,6,7,8]
+var arr1 = [[0,1,2,11,11],[3,4,5,11,11],[6,7,8,11,11],[0,3,6,11,11],[1,4,7,11,11],[2,5,8,11,11],[0,4,8,11,11],[2,4,6,11,11]];
+
+
+function handleClick(clickedElement){
+    
+    if(clickedElement.style.backgroundColor != "lightblue" && clickedElement.style.backgroundColor != "red"){
+        person(clickedElement)
+    } 
+    
+}
+
+function person(clickedElement){
+
+
+
+    count2++
+
+    // document.getElementById("PersonSound").play()
+    document.getElementById("AiSound").pause()
+    document.getElementById("AiSound").currentTime = 0;
+    if(clickedElement.style.backgroundColor != "lightblue"){
+        clickedElement.innerText = "X"
+        clickedElement.style.backgroundColor = "red"
+        arr.splice(arr.findIndex((i) => i == clickedElement.id),1)
+        // arr[arr.findIndex((i) => i == clickedElement.id)] = ""
+        count = 1
+        
+    }
+    var personarr = []
+    for(let i = 0; i < 9; i++){
+        var color = document.getElementById(i).style.backgroundColor;
+        var id = document.getElementById(i).id;
+        
+        if(color == "red"){
+            personarr.push(id);
+        }
+        
+    }
+    var personcount2arr = []
+    for(let i = 0; i < 8; i++){
+        var personcount = 0;
+        for(let j = 0; j < 5; j++){
+            var thiscounter = 0
+            for(let x = 0; x < personarr.length; x++){
+                if(arr1[i][j] == personarr[x]){
+                    personcount++;
+                }
+            }
+        }
+        // console.log("personcount", personcount)
+        if(personcount == 3){
+            
+            console.log("person win")
+            document.getElementById("EndSound").play()
+            document.getElementById("result").innerText = "You-Win";
+            document.getElementById("result").style.backgroundColor = "red";
+            setTimeout(() => {
+                // window.location.reload();
+            }, 3000);
+            return 0
+
+        }else if(personcount == 2){
+            personcount2arr.push(arr1[i])
+            
+            
+            // if(thiscounter == 0){
+            //     var count1 = Math.floor(Math.random() * arr.length);
+            //     console.log("random", arr[count1])
+            //     AI(arr[count1])
+            //     return 0;
+            // }
+           
+            
+        }else if(personcount == 1 && count2 < 3){
+            var count1 = Math.floor(Math.random() * arr.length);
+            console.log("run", arr[count1])
+            // console.log(arr1[i])
+            AI(arr[count1]);
+            return 0;
+        }
+
+    }
+    console.log(personcount2arr)
+    for(let i = 0; i < personcount2arr.length; i++){
+        for(let y = 0; y < personcount2arr[i].length; y++){
+            if(document.getElementById(personcount2arr[i][y]).style.backgroundColor == ""){
+                
+                var count1 = personcount2arr[i][y]
+                
+                console.log("count1",count1)
+                AI(count1)
+                thiscounter++
+                return 0;
+                // sem ki chaduvuthunna mahaprabhu
+                // sem ki chaduvuthunna mahaprabhu
+                // sem ki chaduvuthunna mahaprabhu
+                // sem ki chaduvuthunna mahaprabhu
+            } 
+        }
+    }
+    
+    if(count2 == 9 && personcount < 3){
+        closing()
+    }
+
+}
+
+function AI(count1){
+
+    document.getElementById("AiSound").pause()
+    document.getElementById("AiSound").currentTime = 0.5;
+    document.getElementById("AiSound").play()
+    count2++
+    
+    if(arr.length != 0){
+        
+        // var count1 = Math.floor(Math.random() * arr.length);
+        if(document.getElementById(count1).style.backgroundColor != "red"){
+    
+            AIarr.push(count1)
+            document.getElementById(count1).innerText = "O";
+            document.getElementById(count1).style.backgroundColor = "lightblue";
+        
+            arr.splice(arr.findIndex((i) => i == count1),1);
+            // arr[arr.findIndex((i) => i == count1)] = ""
+            count = 0;
+        } 
+    }
+    
+    
+
+    for(let i = 0; i < 8; i++){
+        var AIcount = 0;
+        for(let j = 0; j < 5; j++){
+            for(let x = 0; x < AIarr.length; x++){
+                if(arr1[i][j] == AIarr[x]){
+                    AIcount++;
+                }
+                if(AIcount == 3){
+
+                    console.log("AI");
+                    document.getElementById("EndSound").play()
+                    
+                    document.getElementById("result").innerText = "AI-Win";
+                    document.getElementById("result").style.backgroundColor = "lightblue";
+
+                    setTimeout(() => {
+                        // window.location.reload();
+                    }, 3000);
+                    return 0;
+                }
+            }
+        }
+    }
+    return 0
+    
+}
+
+function closing(){
+    document.getElementById("EndSound").play();
+    document.getElementById("result").innerText = "Try Again!!!";
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000);
+    return 0;
+}
+>>>>>>> 69376d41faebf6fa7e14119035b491ec9e505849
