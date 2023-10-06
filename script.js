@@ -1181,183 +1181,493 @@
 //     }
 // }
 // arr.map((i)=>i >= 65 && i <= 90 ? console.log(i):"")
-<<<<<<< HEAD
-
-// fjks
-=======
  
 
 
-var count = Math.floor(Math.random() * 2)
-var count2 = 0
-var maincount = 0
-var AIarr = []
-var personarr = [];
-var arr = [0,1,2,3,4,5,6,7,8]
-var arr1 = [[0,1,2,11,11],[3,4,5,11,11],[6,7,8,11,11],[0,3,6,11,11],[1,4,7,11,11],[2,5,8,11,11],[0,4,8,11,11],[2,4,6,11,11]];
+// var count = Math.floor(Math.random() * 2) // for deciding person or AI
+// var count2 = 0 // for ending the match
+// var maincount = 0
+// var AIarr = []
+// var personarr = [];
+// var arr = [0,1,2,3,4,5,6,7,8]
+// var arr1 = [[0,1,2,11,11],[3,4,5,11,11],[6,7,8,11,11],[0,3,6,11,11],[1,4,7,11,11],[2,5,8,11,11],[0,4,8,11,11],[2,4,6,11,11]];
 
 
-function handleClick(clickedElement){
+// function handleClick(clickedElement){
     
-    if(clickedElement.style.backgroundColor != "lightblue" && clickedElement.style.backgroundColor != "red"){
-        person(clickedElement)
-    } 
+//     if(clickedElement.style.backgroundColor != "lightblue" && clickedElement.style.backgroundColor != "red"){
+//         person(clickedElement)
+//     } 
     
-}
+// }
 
-function person(clickedElement){
+// function person(clickedElement){
 
+//     count2++
 
+//     // document.getElementById("PersonSound").play()
+//     document.getElementById("AiSound").pause()
+//     document.getElementById("AiSound").currentTime = 0;
+//     clickedElement.innerText = "X"
+//     clickedElement.style.backgroundColor = "red"
 
-    count2++
-
-    // document.getElementById("PersonSound").play()
-    document.getElementById("AiSound").pause()
-    document.getElementById("AiSound").currentTime = 0;
-    if(clickedElement.style.backgroundColor != "lightblue"){
-        clickedElement.innerText = "X"
-        clickedElement.style.backgroundColor = "red"
-        arr.splice(arr.findIndex((i) => i == clickedElement.id),1)
-        // arr[arr.findIndex((i) => i == clickedElement.id)] = ""
-        count = 1
+//     arr.splice(arr.findIndex((i) => i == clickedElement.id),1)
+//     // arr[arr.findIndex((i) => i == clickedElement.id)] = ""
+//     count = 1
+    
+//     var personarr = []
+//     for(let i = 0; i < 9; i++){
+//         var color = document.getElementById(i).style.backgroundColor;
+//         var id = document.getElementById(i).id;
         
-    }
-    var personarr = []
-    for(let i = 0; i < 9; i++){
-        var color = document.getElementById(i).style.backgroundColor;
-        var id = document.getElementById(i).id;
+//         if(color == "red"){
+//             personarr.push(id);
+//         }
         
-        if(color == "red"){
-            personarr.push(id);
-        }
-        
-    }
-    var personcount2arr = []
-    for(let i = 0; i < 8; i++){
-        var personcount = 0;
-        for(let j = 0; j < 5; j++){
-            var thiscounter = 0
-            for(let x = 0; x < personarr.length; x++){
-                if(arr1[i][j] == personarr[x]){
-                    personcount++;
-                }
-            }
-        }
-        // console.log("personcount", personcount)
-        if(personcount == 3){
-            
-            console.log("person win")
-            document.getElementById("EndSound").play()
-            document.getElementById("result").innerText = "You-Win";
-            document.getElementById("result").style.backgroundColor = "red";
-            setTimeout(() => {
-                // window.location.reload();
-            }, 3000);
-            return 0
+//     }
+//     // console.log(personarr +" person arr")
 
-        }else if(personcount == 2){
-            personcount2arr.push(arr1[i])
+//     var personcount2arr = []
+
+//     for(let i = 0; i < 8; i++){
+//         var personcount = 0;
+//         for(let j = 0; j < 5; j++){
+//             var thiscounter = 0
+//             for(let x = 0; x < personarr.length; x++){
+//                 if(arr1[i][j] == personarr[x]){
+//                     personcount++;
+//                 }
+//             }
+//         }
+//         // console.log("personcount", personcount)
+//         if(personcount == 3){
             
-            
-            // if(thiscounter == 0){
-            //     var count1 = Math.floor(Math.random() * arr.length);
-            //     console.log("random", arr[count1])
-            //     AI(arr[count1])
-            //     return 0;
-            // }
+//             console.log("person win")
+//             document.getElementById("EndSound").play()
+//             document.getElementById("result").innerText = "You-Win";
+//             document.getElementById("result").style.backgroundColor = "red";
+//             setTimeout(() => {
+//                 // window.location.reload();
+//             }, 3000);
+//             return 0
+
+//         }else if(personcount == 2){
+//             var count3 = 0
+//             for(let x = 0; x < 3; x++){
+//                 if(document.getElementById(arr1[i][x]).style.backgroundColor == "red" || document.getElementById(arr1[i][x]).style.backgroundColor == "lightblue"){
+//                     count3++
+//                 }
+//             }
+//             if(count3 == 2){
+//                 personcount2arr.push(arr1[i]) // pushing whole set 
+//             }
+//             return 0
            
-            
-        }else if(personcount == 1 && count2 < 3){
-            var count1 = Math.floor(Math.random() * arr.length);
-            console.log("run", arr[count1])
-            // console.log(arr1[i])
-            AI(arr[count1]);
-            return 0;
-        }
+//         }
+//         // }else if(personcount == 1 && count2 < 3){
+//             var count1 = Math.floor(Math.random() * arr.length);
 
-    }
-    console.log(personcount2arr)
-    for(let i = 0; i < personcount2arr.length; i++){
-        for(let y = 0; y < personcount2arr[i].length; y++){
-            if(document.getElementById(personcount2arr[i][y]).style.backgroundColor == ""){
+//             AI(arr[count1]);
+//             return 0;
+//         // }
+
+//     }
+//     console.log(personcount2arr , " person sets")
+    
+//     for(let i = 0; i < personcount2arr.length; i++){
+//         for(let y = 0; y < personcount2arr[i].length; y++){
+//             if(document.getElementById(personcount2arr[i][y]).style.backgroundColor == ""){
                 
-                var count1 = personcount2arr[i][y]
+//                 var count1 = personcount2arr[i][y]
                 
-                console.log("count1",count1)
-                AI(count1)
-                thiscounter++
-                return 0;
-                // sem ki chaduvuthunna mahaprabhu
-                // sem ki chaduvuthunna mahaprabhu
-                // sem ki chaduvuthunna mahaprabhu
-                // sem ki chaduvuthunna mahaprabhu
-            } 
-        }
-    }
+//                 console.log("count1",count1)
+//                 AI(count1)
+//                 thiscounter++
+//                 return 0;
+                
+//             } 
+//         }
+//     }
     
-    if(count2 == 9 && personcount < 3){
-        closing()
-    }
+//     if(count2 == 9 && personcount < 3){
+//         closing()
+//     }
 
-}
+// }
 
-function AI(count1){
+// function AI(count1){
 
-    document.getElementById("AiSound").pause()
-    document.getElementById("AiSound").currentTime = 0.5;
-    document.getElementById("AiSound").play()
-    count2++
+//     document.getElementById("AiSound").pause()
+//     document.getElementById("AiSound").currentTime = 0.5;
+//     document.getElementById("AiSound").play()
+//     count2++
     
-    if(arr.length != 0){
+//     if(arr.length != 0){
         
-        // var count1 = Math.floor(Math.random() * arr.length);
-        if(document.getElementById(count1).style.backgroundColor != "red"){
+//         // var count1 = Math.floor(Math.random() * arr.length);
+//         if(document.getElementById(count1).style.backgroundColor != "red"){
     
-            AIarr.push(count1)
-            document.getElementById(count1).innerText = "O";
-            document.getElementById(count1).style.backgroundColor = "lightblue";
+//             AIarr.push(count1)
+//             document.getElementById(count1).innerText = "O";
+//             document.getElementById(count1).style.backgroundColor = "lightblue";
         
-            arr.splice(arr.findIndex((i) => i == count1),1);
-            // arr[arr.findIndex((i) => i == count1)] = ""
-            count = 0;
-        } 
-    }
+//             arr.splice(arr.findIndex((i) => i == count1),1);
+//             // arr[arr.findIndex((i) => i == count1)] = ""
+//             count = 0;
+//         } 
+//     }
     
     
 
-    for(let i = 0; i < 8; i++){
-        var AIcount = 0;
-        for(let j = 0; j < 5; j++){
-            for(let x = 0; x < AIarr.length; x++){
-                if(arr1[i][j] == AIarr[x]){
-                    AIcount++;
-                }
-                if(AIcount == 3){
+//     for(let i = 0; i < 8; i++){
+//         var AIcount = 0;
+//         for(let j = 0; j < 5; j++){
+//             for(let x = 0; x < AIarr.length; x++){
+//                 if(arr1[i][j] == AIarr[x]){
+//                     AIcount++;
+//                 }
+//                 if(AIcount == 3){
 
-                    console.log("AI");
-                    document.getElementById("EndSound").play()
+//                     console.log("AI");
+//                     document.getElementById("EndSound").play()
                     
-                    document.getElementById("result").innerText = "AI-Win";
-                    document.getElementById("result").style.backgroundColor = "lightblue";
+//                     document.getElementById("result").innerText = "AI-Win";
+//                     document.getElementById("result").style.backgroundColor = "lightblue";
 
-                    setTimeout(() => {
-                        // window.location.reload();
-                    }, 3000);
-                    return 0;
-                }
+//                     setTimeout(() => {
+//                         // window.location.reload();
+//                     }, 3000);
+//                     return 0;
+//                 }
+//             }
+//         }
+//     }
+//     return 0
+    
+// }
+
+// function closing(){
+//     document.getElementById("EndSound").play();
+//     document.getElementById("result").innerText = "Try Again!!!";
+//     setTimeout(() => {
+//         window.location.reload();
+//     }, 3000);
+//     return 0;
+// }
+
+
+// function main1(){
+//     var rowArray = [1,2,3,4,5,6,7,8,9]
+
+//     var arr = [[]]
+
+//     for(let i = 0; i < 9; i++){
+//         var element = rowArray[Math.floor(Math.random() * rowArray.length)]
+
+//         for(let j = 0 ; j < rowArray.length; j++){
+//             if(rowArray[j] == element){
+//                 rowArray.splice(j, 1)
+//             }
+//         }
+//         arr[0].push(element)
+        
+//     }
+//     return arr
+    
+// }
+
+// function main(){
+
+//     var resultArray = main1()
+
+//     while(resultArray.length < 3){
+//         var rowArray = [1,2,3,4,5,6,7,8,9]
+
+//         var result2Array = []
+        
+//         for(let i = 0; i < 3; i++){
+
+//             var colArray = [1,2,3,4,5,6,7,8,9]
+
+//             // for(let j = 0 ; j < resultArray.length; j++){
+//             //     for(let l = 0; l < 9; l++){
+//             //         if(resultArray[j][i] == colArray[l]){
+//             //             colArray.splice(l, 1)
+//             //         }
+//             //     }
+                
+//             // }
+    
+//             for(let j = 0 ; j < 3; j++){
+//                 // for(let l = 0; l < 9; l++){
+//                     console.log(resultArray[i][j])
+//                     // if(resultArray[i][j] == colArray[l]){
+//                     //     colArray.splice(l, 1)
+//                     // }
+//                 // }
+                
+//             }
+    
+//             var developedArray = [...colArray, ...rowArray]
+            
+//             var result1Array = removeOneTimeRepeated(developedArray)
+    
+//             var element = result1Array[Math.floor(Math.random() *  result1Array.length)]
+//             result2Array.push(element)
+            
+//             for(let j = 0 ; j < rowArray.length; j++){
+//                 if(rowArray[j] == element){
+//                     rowArray.splice(j, 1)
+//                 }
+//             }
+
+//             if(element == undefined){
+//                 break;
+//             }
+            
+//         }
+        
+//         if(element != undefined){
+//             resultArray.push(result2Array)
+//         }
+//     }
+//     console.log(resultArray)
+// }
+
+// function removeOneTimeRepeated(arr) {
+
+//     const elementCount = [];
+  
+//     arr.forEach(i => { 
+//         if (elementCount[i]){
+//             elementCount[i]++
+//         } else{
+//             elementCount[i] = 1
+//         }
+//     })
+//     const result = arr.filter(i => elementCount[i] != 1);
+//     return result
+// }
+// main()
+// var w 
+// function main(){
+    
+//     if(typeof(Worker !== undefined)){
+//         if(typeof(w) == undefined){
+//             console.log("woer")
+
+//         }
+//     }
+//     // console.log(typeof(Worker))
+// }
+
+
+function main1(){
+    var rowArray = [1,2,3,4,5,6,7,8,9]
+
+    var arr = [[]]
+
+    for(let i = 0; i < 9; i++){
+        var element = rowArray[Math.floor(Math.random() * rowArray.length)]
+
+        for(let j = 0 ; j < rowArray.length; j++){
+            if(rowArray[j] == element){
+                rowArray.splice(j, 1)
             }
         }
+        arr[0].push(element)
+        
     }
-    return 0
+    return arr
     
 }
 
-function closing(){
-    document.getElementById("EndSound").play();
-    document.getElementById("result").innerText = "Try Again!!!";
-    setTimeout(() => {
-        window.location.reload();
-    }, 3000);
-    return 0;
+function main(){
+
+    var resultArray = main1()
+    resultArray.push([],[],[],[],[],[],[],[])
+    // console.log(resultArray)
+
+    // while(resultArray[8][8] == undefined){
+    for(let a = 0 ; a < 9; a++){
+
+        var rowArray = [1,2,3,4,5,6,7,8,9]
+        var squareArray = [1,2,3,4,5,6,7,8,9]
+
+        // var result2Array = []
+        for(let i = 0; i < 9; i++){
+
+            // var count1 = i % 3
+
+            console.log(i, "i")
+
+            var colArray = [1,2,3,4,5,6,7,8,9]
+
+            for(let j = 0 ; j < 9; j++){
+                
+                console.log(j)
+
+                for(let l = 0; l < 9; l++){
+                    if(resultArray[i][j] == colArray[l]){
+                        colArray.splice(l, 1)
+                    }
+                }
+
+                // var count2 = j % 3
+                
+                // console.log(count1)
+
+                // for(let m = 0 ; m <= count1; m++){
+                //     for(let n = 0 ; n <= count2; n++){
+                //         for(let l = 0 ; l < 9; l++){
+                //             if(resultArray[m][n] == squareArray[l]){
+                //                 squareArray.splice(l, 1)
+                //             }
+                //         }
+                //     }
+                // }
+                
+            }
+            // console.log(squareArray)
+    
+            var developedArray = [...colArray, ...rowArray, ...squareArray]
+            
+            var result1Array = trimedArray(developedArray)
+    
+            var element = result1Array[Math.floor(Math.random() *  result1Array.length)]
+            // result2Array.push(element)
+            
+            for(let j = 0 ; j < rowArray.length; j++){
+                if(rowArray[j] == element){
+                    rowArray.splice(j, 1)
+                }
+            }
+
+            if(element == undefined){
+                break
+            }
+            
+        }
+        console.log("f")
+        
+        if(element != undefined){
+            resultArray[i][j] = element
+        }
+    }
+    console.log(resultArray)
+    // return resultArray
 }
->>>>>>> 69376d41faebf6fa7e14119035b491ec9e505849
+
+function trimedArray(arr) {
+
+    var result = []
+    arr = arr.sort()
+    var count4 = 0
+    for(let i = 0 ; i < arr.length-1; i++){
+        if(arr[i] == arr[i+1]){
+            count4++
+        }else{
+            count4 = 0
+        }
+        if(count4 == 2){
+            result.push(arr[i])
+        }
+    }
+
+    return result
+}
+
+
+
+
+function run(){
+    
+    // var result = [
+    //     [6, 3, 2, 8, 0, 4, 7, 1, 7],
+    //     [9, 4, 2, 5, 9, 2, 5, 7, 6],
+    //     [3, 8, 8, 6, 4, 9, 6, 0, 3],
+    //     [1, 5, 9, 4, 9, 8, 4, 4, 7],
+    //     [7, 8, 5, 6, 6, 3, 7, 8, 9],
+    //     [1, 1, 3, 6, 3, 7, 4, 6, 1],
+    //     [9, 4, 0, 8, 5, 7, 7, 3, 5],
+    //     [5, 2, 9, 1, 6, 8, 6, 4, 8],
+    //     [7, 8, 9, 8, 2, 8, 5, 4, 7]
+    // ]
+    var resultArray = main1()
+    console.log(resultArray, "resultarry")
+    // resultArray.push([],[],[],[],[],[],[],[])
+
+    while(resultArray.length < 17){
+
+        var result2Array = []
+
+        for(let i = 0; i < 9; i++){
+
+            var rowArray = [1,2,3,4,5,6,7,8,9]
+            if(i<3){
+                var counter = 0
+            }else if(i < 6){
+                var counter = 3
+            }else{
+                var counter = 6
+            }
+            for(let j = 0 ; j < resultArray.length; j++){
+                var colArray = [1,2,3,4,5,6,7,8,9]
+                for(let k = 0 ; k < 9; k++){
+                    if(resultArray[j][i] == colArray[k]){
+                        colArray.splice(k,1)
+                    }
+                }
+
+                if(j<3){
+                    var counter1 = 0
+                }else if(j < 6){
+                    var counter1 = 3
+                }else{
+                    var counter1 = 6
+                }
+
+                var squareArray = [1,2,3,4,5,6,7,8,9]
+
+                for(let k = 0 ; k <= i%3; k++){
+                    for(let l = 0; l <= j%3; l++){
+                        for(let m = 0; m < 9; m++){
+
+                            // if(resultArray[counter+k][counter1+l] == squareArray[m]){
+                            //     squareArray.splice(m,1)
+                            // }
+                            
+                        } 
+                    }
+                }
+
+                console.log(counter+i%3, counter1+j%3)
+
+            }
+
+            var developedArray = [...colArray, ...rowArray, ...squareArray]
+
+            var result1Array = trimedArray(developedArray)
+            var element = result1Array[Math.floor(Math.random() * result1Array.length)]
+            
+            result2Array.push(element)
+            for(let j = 0 ; j < rowArray.length; j++){
+                if(rowArray[j] == element){
+                    rowArray.splice(j, 1)
+                }
+            }
+            if(element == undefined){
+                break
+            }
+            
+        }
+
+        if(element != undefined){
+            resultArray.push(result2Array)
+        }
+    
+    }
+    console.log(resultArray)
+    
+}
+run()
