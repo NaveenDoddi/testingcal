@@ -1,112 +1,22 @@
 {
   "empData": [
     {
-      "first_name": "Ludovico",
-      "last_name": "Happs",
-      "email": "lhapps2@csmonitor.com",
-      "gender": "Male",
-      "salary": "$12724.95",
-      "phone": "490 400 4847",
-      "id": 3
-    },
-    {
-      "first_name": "Oates",
-      "last_name": "Woonton",
-      "email": "owoonton3@instagram.com",
-      "gender": "Male",
-      "salary": "$10180.21",
-      "phone": "633 161 0112",
+      "first_name": "Jacintha",
+      "last_name": "Plevey",
+      "email": "jpleveyl@devhub.com",
+      "gender": "Female",
+      "salary": "$48530.92",
+      "phone": "250 389 3796",
       "id": 4
     },
     {
-      "first_name": "Jacintha",
+      "first_name": "naveen",
       "last_name": "Plevey",
       "email": "jpleveyl@devhub.com",
       "gender": "Female",
       "salary": "$48530.92",
       "phone": "250 389 3796",
       "id": 5
-    },
-    {
-      "first_name": "Jacintha",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "Female",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 6
-    },
-    {
-      "first_name": "Weylin",
-      "last_name": "Dallimore",
-      "email": "wdallimore6@prnewswire.com",
-      "gender": "Male",
-      "salary": "$39223.35",
-      "phone": "168 580 8934",
-      "id": 7
-    },
-    {
-      "first_name": "Silas",
-      "last_name": "Critoph",
-      "email": "scritoph7@reverbnation.com",
-      "gender": "Male",
-      "salary": "$10977.77",
-      "phone": "749 670 1106",
-      "id": 8
-    },
-    {
-      "first_name": "Ricoriki",
-      "last_name": "Orniz",
-      "email": "rorniz8@tripod.com",
-      "gender": "Male",
-      "salary": "$24840.27",
-      "phone": "751 326 0203",
-      "id": 9
-    },
-    {
-      "first_name": "Trudi",
-      "last_name": "Luckcock",
-      "email": "tluckcock9@seattletimes.com",
-      "gender": "Female",
-      "salary": "$11067.89",
-      "phone": "348 424 5766",
-      "id": 10
-    },
-    {
-      "first_name": "Jacintha",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "Female",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 11
-    },
-    {
-      "first_name": "Jacintha",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "Female",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 12
-    },
-    {
-      "first_name": "Jacintha",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "Female",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 13
-    },
-    {
-      "first_name": "Jacintha",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "Female",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 14
     }
   ]
 }
