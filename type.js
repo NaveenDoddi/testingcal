@@ -10,30 +10,26 @@ const newdata = {
 // json-server --watch db.json
 
 function fet(){
-    fetch("http://localhost:3000/empData")
+    fetch("http://localhost:3000/empData?first_name=naveen")
     .then(res => res.json())
     .then(data => console.log(data))
 }
 
-var id = 3
+var id = 1
 function delet(){
     fetch("http://localhost:3000/empdata/" + id,{
-        method: "DELETE",
-
-        // body : JSON.stringify("naveen donkey"),
-        // headers: {
-        //     'Content-Type': 'application/json'
-        // },
+        method: "DELETE"
     })
 
     id++
 }
 
 function post(){
-
+    var image = document.getElementsByTagName("img")[0].src
+    console.log(image)
     fetch("http://localhost:3000/empData", {
         method: "POST",
-        body: JSON.stringify(newdata),
+        body: JSON.stringify(image),
         headers: {
             "Content-type": "application/json"
         }
@@ -41,7 +37,7 @@ function post(){
 }
 function put(){
 
-    fetch("http://localhost:3000/empData/1", {
+    fetch("http://localhost:3000/empData", {
         method: "PUT",
         body: JSON.stringify("male"),
         headers: {
@@ -49,4 +45,5 @@ function put(){
         }
     });
 }
+
 
