@@ -1,5 +1,5 @@
 const newdata = {
-    first_name: "naveen",
+    first_name: "jaya",
     last_name: "Plevey",
     email: "jpleveyl@devhub.com",
     gender: "Female",
@@ -10,14 +10,14 @@ const newdata = {
 // json-server --watch db.json
 
 function fet(){
-    fetch("http://localhost:3000/empData?first_name=naveen")
+    fetch("http://localhost:3000/empData/11")
     .then(res => res.json())
     .then(data => console.log(data))
 }
 
 var id = 1
 function delet(){
-    fetch("http://localhost:3000/empdata/" + id,{
+    fetch("http://localhost:3000/empdata/1",{
         method: "DELETE"
     })
 
@@ -25,11 +25,9 @@ function delet(){
 }
 
 function post(){
-    var image = document.getElementsByTagName("img")[0].src
-    console.log(image)
     fetch("http://localhost:3000/empData", {
         method: "POST",
-        body: JSON.stringify(image),
+        body: JSON.stringify(newdata),
         headers: {
             "Content-type": "application/json"
         }
@@ -37,9 +35,9 @@ function post(){
 }
 function put(){
 
-    fetch("http://localhost:3000/empData", {
+    fetch("http://localhost:3000/empData/11", {
         method: "PUT",
-        body: JSON.stringify("male"),
+        body: JSON.stringify(newdata),
         headers: {
             "Content-type": "application/json"
         }

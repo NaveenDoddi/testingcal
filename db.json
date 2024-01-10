@@ -1,15 +1,6 @@
 {
   "empData": [
     {
-      "first_name": "na",
-      "last_name": "Plevey",
-      "email": "jpleveyl@devhub.com",
-      "gender": "",
-      "salary": "$48530.92",
-      "phone": "250 389 3796",
-      "id": 1
-    },
-    {
       "first_name": "naveen",
       "last_name": "Plevey",
       "email": "jpleveyl@devhub.com",
@@ -59,6 +50,15 @@
     },
     {
       "id": 10
+    },
+    {
+      "first_name": "jaya",
+      "last_name": "Plevey",
+      "email": "jpleveyl@devhub.com",
+      "gender": "Female",
+      "salary": "$48530.92",
+      "phone": "250 389 3796",
+      "id": 11
     }
   ]
 }
