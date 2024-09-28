@@ -223,8 +223,48 @@
 // console.log(input.join(' '))
 
 function run(){
-  var text = 'Hello World'.toUpperCase()
-  var uppers = new SpeechSynthesisUtterance(text)
-  speechSynthesis.speak(uppers)
-  SpeechSynthesisVoice
+  // Get available voices
+function getVoices() {
+  return new Promise(function (resolve, reject) {
+    let voices = speechSynthesis.getVoices();
+    
+    if (voices.length) {
+      resolve(voices);
+    } else {
+      // Some browsers may load voices asynchronously, so we need to wait for the 'voiceschanged' event
+      speechSynthesis.onvoiceschanged = function () {
+        voices = speechSynthesis.getVoices();
+        resolve(voices);
+      };
+    }
+  });
+}
+
+// Example of using a specific voice
+getVoices().then(function(voices) {
+  var text = 'नवीन बहुत अच्छे लड़का  हैं';
+  var utterance = new SpeechSynthesisUtterance(text);
+  
+  // List all voices
+  voices.forEach(function(voice, i) {
+    console.log(i + ": " + voice.name + " (" + voice.lang + ")");
+  });
+
+  // Set a specific voice (for example, selecting a Kannada language voice)
+  var selectedVoice = voices.find(voice => voice.lang === 'hi-IN'); // Searching for a Kannada voice
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  } else {
+    console.log("Kannada voice not available, using default.");
+  }
+
+  // Speak the text
+  speechSynthesis.speak(utterance);
+});
+
+
+fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
+.then(res => res.json())
+.then((data) => console.log(data))
+
 }
