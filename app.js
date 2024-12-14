@@ -222,7 +222,7 @@
 // }
 // console.log(input.join(' '))
 
-function run(){
+function speek(){
   // Get available voices
 function getVoices() {
   return new Promise(function (resolve, reject) {
@@ -242,28 +242,65 @@ function getVoices() {
 
 // Example of using a specific voice
 getVoices().then(function(voices) {
-  var text = 'नवीन बहुत अच्छे लड़का  हैं';
+  // var text = 'नवीन बहुत अच्छे लड़का  हैं';
+  var text = document.getElementById('output').innerText
   var utterance = new SpeechSynthesisUtterance(text);
-  
-  // List all voices
-  voices.forEach(function(voice, i) {
-    console.log(i + ": " + voice.name + " (" + voice.lang + ")");
-  });
-
-  // Set a specific voice (for example, selecting a Kannada language voice)
-  var selectedVoice = voices.find(voice => voice.lang === 'hi-IN'); // Searching for a Kannada voice
-  if (selectedVoice) {
-    utterance.voice = selectedVoice;
-  } else {
-    console.log("Kannada voice not available, using default.");
-  }
 
   // Speak the text
   speechSynthesis.speak(utterance);
 });
 
-
-fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
-.then(res => res.json())
-.then((data) => console.log(data))
 }
+
+const startButton = document.getElementById("startButton");
+const outputDiv = document.getElementById("output");
+const clearButton = document.getElementById("clear");
+
+// Constants for the language and the default language
+const LANG = "en-US";
+
+// Event listeners for the clear button
+clearButton.addEventListener("click", () => {
+  outputDiv.textContent = "";
+});
+
+// Create a new SpeechRecognition object
+const recognition = new   (window.SpeechRecognition ||
+  window.webkitSpeechRecognition ||
+  window.mozSpeechRecognition ||
+  window.msSpeechRecognition)();
+
+// Set the language of the recognition
+recognition.lang = LANG;
+
+// Event listeners for the recognition
+recognition.onresult = (event) => {
+  const transcript = event.results[0][0].transcript;
+  outputDiv.textContent = ` question: ${transcript}? `;
+  database.forEach((q) => q.questions.forEach((q2) => q2.indexOf(transcript) > -1 ? outputDiv.textContent += `answer: ${q.ans}` : ''))
+  
+};
+
+// Event listeners for the start and end of the recognition
+recognition.onstart = () => startButton.textContent = "Listening...";;
+recognition.onend = () => startButton.textContent = "Start Voice Input";;
+startButton.addEventListener("click", () => recognition.start());
+
+function onLanguageChange() {
+  recognition.lang = document.getElementById("language").value;
+}
+
+const database = [
+  {
+    questions : ['what is your name', 'people calls you at'],
+    ans : 'naveen'
+  },
+  {
+    questions : ['what is your age', 'how old are you','years you have'],
+    ans : '21'
+  },
+  {
+    questions : ['who is your class teacher', 'favourite teacher'],
+    ans : 'rama krishna'
+  },
+]

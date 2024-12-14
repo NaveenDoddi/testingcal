@@ -9,9 +9,18 @@
   <!--
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mongodb/4.4.10/mongodb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
-  <button onclick="run()">speek</button>
+  
   <!-- <canvas id="myChart" style="width:100%;max-width:600px"></canvas> -->
-  <script src="app.js"></script>
+
+    <button id="startButton">Start Voice Input</button>
+    <button onclick="speek()">speek</button>
+    <button id="clear">Clear</button>
+    <select id="language">
+      <option value="en-US">English</option>
+      <option value="hi-IN">Hindi</option>
+    </select>
+    <div id="output" contentEditable="true">Question: </div>
+    <script src="app.js"></script>
 
 </body>
 </html>
